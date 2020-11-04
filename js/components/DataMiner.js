@@ -12,7 +12,7 @@ async function fetchData(sourceURL) {
 
     let dataset = await resource.json();
 
-    return dataset;
+    return dataset[0];
 
     debugger;
 }
@@ -22,5 +22,5 @@ async function postData(sourceURL){
     return "you are using postDara API Endpoint";
 }
 
-export {fetchData, postData};
+// export {fetchData, postData};
 })();
