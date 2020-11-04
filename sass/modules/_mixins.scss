@@ -1,0 +1,13 @@
+@mixin roundCorners($radius){
+    border-radius: $radius;
+    border-style:solid;
+    border-color: white;
+}
+
+
+@mixin boxKit($values){
+    @each $size in $values {
+        height: $size;
+        width: $size;
+    }
+}

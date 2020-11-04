@@ -1,3 +1,9 @@
+// importing functions from dataminer
+
+import {fetchData, postData} from ".components/DataMiner.js";
+
 (()=> {
-	// stub - your code goes here 
+
+	fetchData("./includes/functions.php").catch(err => {console.log(err);});
+
 })();
