@@ -1,5 +1,4 @@
 // starting a fetch call
-(()=> {
 async function fetchData(sourceURL) {
     let resource = await fetch(sourceURL).then(response => {
         
@@ -17,10 +16,5 @@ async function fetchData(sourceURL) {
     debugger;
 }
 
-async function postData(sourceURL){
 
-    return "you are using postDara API Endpoint";
-}
-
-// export {fetchData, postData};
-})();
+ export {fetchData};

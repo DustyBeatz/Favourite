@@ -1,0 +1,19 @@
+
+.iconBox-section {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.iconBox-section li {
+    display: inline-block;
+}
+
+
+
+.iconBox img {
+
+    @include roundCorners(20px);
+
+}
+

@@ -8,31 +8,30 @@
 </head>
 <body>
     <header>
-        <h1 id="title">Title</h1>
+        <h1 id="title">Favourite Things</h1>
 
     </header>
 
     <div id="imageBox">
-        <img alt="subject image" src="images/running1.jpg">
-        <p>here's an image</p>
-
+        <img id="favImg" alt="subject image" src="images/running1.jpg">
+        <p id="imgBoxTitle">here's an image</p>
     </div>
+
 
     <div id="descBox">
-
-        <p class="imageDesc">Here is the description</p>
-
+        <p id="imageDesc">descBox</p>
     </div>
 
-    <footer>
-    <ul>
-        <li><a href="#" class="selector">Sleeping</a></li>
+    <ul class="iconBox-section">
+        
+    </ul><!--This will be where our icons populate-->
 
-        <li><a href="#" class="selector">Running</a><li> 
-
-        <li><a href="#" class="selector">Reading</a></li>
-    </ul>
-    </footer>
+    <template id="favTemplate"> 
+    <li class="iconBox">
+        <h1 class="hidden"></h1>
+        <img src="" alt="fav icon">
+    </li>
+    </template>
     
     <script type="module" src="js/main.js"></script>
 </body>

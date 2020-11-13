@@ -1,11 +1,34 @@
 // importing functions from dataminer
 
-import {fetchData, postData} from "./components/DataMiner.js";
+import {fetchData} from "./modules/DataMiner.js";
 
 (()=> {
+	console.log('loaded')
 
-	console.log('This shit is dog shit lets not eat it');
+	function errorBox(message) {
+		alert("Something just isn't right!");
+	}
 
-	fetchData("./includes/functions.php").catch(err => {console.log(err);});
 
+	function loadFavThumbs(thumbsFav) {
+		let iconSection = document.querySelector(".iconBox-section"),
+		iconTemplate = document.querySelector("#favTemplate").content;
+
+		for (let iconbox in thumbsFav ) {
+
+			let currentIcon = iconTemplate.cloneNode(true),
+			currentIconText = currentIcon.querySelector('.iconBox').children;
+
+			currentIconText[1].src = `images/${thumbsFav[iconbox].icon}`;
+			currentIconText[1].id = thumbsFav[iconbox].id;
+
+			iconSection.appendChild(currentIcon);
+		}
+
+	}
+
+
+
+
+    fetchData("./includes/index.php").then(data => loadFavThumbs(data)).catch(err => { console.log(err); errorBox(err); });
 })();
