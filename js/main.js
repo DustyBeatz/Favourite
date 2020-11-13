@@ -16,11 +16,12 @@ import {fetchData} from "./modules/DataMiner.js";
 		favImgDesc = document.querySelector("#imgBoxTitle"),
 		favDescDisplay = document.querySelector("#imageDesc");
 
-		favImgDisplay.src = `./images/${favdata.img}`;
+		favImgDisplay.src = `./images/${favdata['img']}`;
+		console.log(favdata.img);
 		debugger;
-		favImgDesc.textContent = favdata.descript;
+		favImgDesc.textContent = favdata['descript'];
 		debugger;
-		favDescDisplay.textContent = favdata.title;
+		favDescDisplay.textContent = favdata['title'];
 		debugger;
 	}
 
@@ -28,6 +29,7 @@ import {fetchData} from "./modules/DataMiner.js";
 
 		if(!event.target.id) {return}
 		console.log(event.target.id);
+		debugger;
 
 		fetchData(`./includes/index.php?id=${event.target.id}`).then(data => handleFavData(data)).catch(err => console.log(err));
 	}
