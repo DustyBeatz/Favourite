@@ -9,9 +9,9 @@ import {fetchData} from "./modules/DataMiner.js";
 		alert("Something just isn't right!");
 	}
 
-	function handleFavData(data){
+	function handleFavData(favdata){
 
-	let favdata = JSON.stringify(data),
+	let 
 		favImgDisplay = document.querySelector("#favImg"),
 		favImgDesc = document.querySelector("#imgBoxTitle"),
 		favDescDisplay = document.querySelector("#imageDesc");
