@@ -9,6 +9,29 @@ import {fetchData} from "./modules/DataMiner.js";
 		alert("Something just isn't right!");
 	}
 
+	function handleFavData(data){
+
+	let favdata = JSON.stringify(data),
+		favImgDisplay = document.querySelector("#favImg"),
+		favImgDesc = document.querySelector("#imgBoxTitle"),
+		favDescDisplay = document.querySelector("#imageDesc");
+
+		favImgDisplay.src = `./images/${favdata.img}`;
+		debugger;
+		favImgDesc.textContent = favdata.descript;
+		debugger;
+		favDescDisplay.textContent = favdata.title;
+		debugger;
+	}
+
+	function retrieveFavInfo() {
+
+		if(!event.target.id) {return}
+		console.log(event.target.id);
+
+		fetchData(`./includes/index.php?id=${event.target.id}`).then(data => handleFavData(data)).catch(err => console.log(err));
+	}
+
 
 	function loadFavThumbs(thumbsFav) {
 		let iconSection = document.querySelector(".iconBox-section"),
@@ -24,6 +47,7 @@ import {fetchData} from "./modules/DataMiner.js";
 
 			iconSection.appendChild(currentIcon);
 		}
+		iconSection.addEventListener("click", retrieveFavInfo, handleFavData);
 
 	}
 
