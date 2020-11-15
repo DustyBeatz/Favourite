@@ -15,13 +15,14 @@ import {fetchData} from "./modules/DataMiner.js";
 		favImgDisplay = document.querySelector("#favImg"),
 		favImgDesc = document.querySelector("#imgBoxTitle"),
 		favDescDisplay = document.querySelector("#imageDesc");
+		debugger;
 
-		favImgDisplay.src = `./images/${favdata['img']}`;
+		favImgDisplay.src = `./images/${favdata.icon}`;
 		console.log(favdata.img);
 		debugger;
-		favImgDesc.textContent = favdata['descript'];
+		favImgDesc.textContent = favdata.descript;
 		debugger;
-		favDescDisplay.textContent = favdata['title'];
+		favDescDisplay.textContent = favdata.title;
 		debugger;
 	}
 
@@ -31,13 +32,14 @@ import {fetchData} from "./modules/DataMiner.js";
 		console.log(event.target.id);
 		debugger;
 
-		fetchData(`./includes/index.php?id=${event.target.id}`).then(data => handleFavData(data)).catch(err => console.log(err));
+		fetchData(`./includes/index.php?id=${event.target.id}`).then(favdata => handleFavData(favdata)).catch(err => console.log(err));
 	}
 
 
 	function loadFavThumbs(thumbsFav) {
 		let iconSection = document.querySelector(".iconBox-section"),
 		iconTemplate = document.querySelector("#favTemplate").content;
+		debugger;
 
 		for (let iconbox in thumbsFav ) {
 
