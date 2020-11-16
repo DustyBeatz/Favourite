@@ -17,12 +17,12 @@ import {fetchData} from "./modules/DataMiner.js";
 		favDescDisplay = document.querySelector("#imageDesc");
 		debugger;
 
-		favImgDisplay.src = `./images/${favdata.icon}`;
+		favImgDisplay.src = `./images/${favdata[0].img}`;
 		console.log(favdata.img);
 		debugger;
-		favImgDesc.textContent = favdata.descript;
+		favImgDesc.textContent = favdata[0].descript;
 		debugger;
-		favDescDisplay.textContent = favdata.title;
+		favDescDisplay.textContent = favdata[0].title;
 		debugger;
 	}
 
