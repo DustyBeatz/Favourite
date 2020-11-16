@@ -9,37 +9,37 @@ import {fetchData} from "./modules/DataMiner.js";
 		alert("Something just isn't right!");
 	}
 
-	function handleFavData(favdata){
+	function handleFavData(favdata){ //displays data associated with the chosen icon id
 
 	let 
 		favImgDisplay = document.querySelector("#favImg"),
 		favImgDesc = document.querySelector("#imgBoxTitle"),
 		favDescDisplay = document.querySelector("#imageDesc");
-		debugger;
+		// debugger;
 
 		favImgDisplay.src = `./images/${favdata[0].img}`;
 		console.log(favdata.img);
-		debugger;
+		// debugger;
 		favImgDesc.textContent = favdata[0].descript;
-		debugger;
+		// debugger;
 		favDescDisplay.textContent = favdata[0].title;
-		debugger;
+		// debugger;
 	}
 
-	function retrieveFavInfo() {
+	function retrieveFavInfo() { //fetches the data with the asscoated id and sends it to handlefavdata
 
 		if(!event.target.id) {return}
 		console.log(event.target.id);
-		debugger;
+		// debugger;
 
-		fetchData(`./includes/index.php?id=${event.target.id}`).then(favdata => handleFavData(favdata)).catch(err => console.log(err));
+		fetchData(`./includes/index.php?id=${event.target.id}`).then(favdata => handleFavData(favdata)).catch(err => errorBox(err));
 	}
 
 
 	function loadFavThumbs(thumbsFav) {
 		let iconSection = document.querySelector(".iconBox-section"),
 		iconTemplate = document.querySelector("#favTemplate").content;
-		debugger;
+		// debugger;
 
 		for (let iconbox in thumbsFav ) {
 
